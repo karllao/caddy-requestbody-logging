@@ -9,6 +9,7 @@ import (
     "go.uber.org/zap"
     "go.uber.org/zap/zapcore"
     "github.com/caddyserver/caddy/v2"
+    "github.com/caddyserver/caddy/v2/modules/caddyhttp"
 )
 
 type Middleware struct {
