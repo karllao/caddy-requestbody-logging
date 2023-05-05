@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"go.uber.org/zap"
-    "go.uber.org/zap/zapcore"
+	"go.uber.org/zap/zapcore"
 	"github.com/caddyserver/caddy/v2"
 	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
 )
@@ -36,8 +36,8 @@ func (m Middleware) ServeHTTP(w http.ResponseWriter, r *http.Request, next caddy
 
 	r.Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
 
-    logger := getLogger(r.Context())
-    logger.Info("Request Body", zap.Any("request", string(bodyBytes)))
-	
+	logger := getLogger(r.Context())
+	logger.Info("Request Body", zap.Any("request", string(bodyBytes)))
+
 	return next.ServeHTTP(w, r)
 }
