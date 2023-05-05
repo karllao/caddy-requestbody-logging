@@ -24,7 +24,7 @@ func (Middleware) CaddyModule() caddy.ModuleInfo {
 	}
 }
 
-func getLogger(ctx context.Context) *zap.Logger {
+func getLogger(ctx caddy.Context) *zap.Logger {
     return ctx.Value(caddy.LogContextKey).(*zap.Logger)
 }
 
